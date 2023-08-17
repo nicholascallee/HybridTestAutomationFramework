@@ -8,6 +8,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import nicholas.allee.test.automation.framework.utilities.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,6 +16,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import java.io.File;
 import java.lang.reflect.Method;
+import java.time.Duration;
 
 public class TestBase {
     public static WebDriver driver;
@@ -40,6 +42,8 @@ public class TestBase {
     public void beforeMethod(String browser, Method testMethod){
         logger = extent.createTest(testMethod.getName());
         setupDriver(browser);
+        driver.get(Constants.url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     public void setupDriver (String browser) {
