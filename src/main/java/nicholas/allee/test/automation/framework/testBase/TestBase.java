@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-
 import java.io.File;
 import java.lang.reflect.Method;
 
@@ -22,15 +21,16 @@ public class TestBase {
     @BeforeTest
     public void beforeTest()
     {
-        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator+"reports"+ File.separator+"SDETADDAExtentReport.html");
+        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator+"reports"+ File.separator+"AlleeExtentReport.html");
         extent = new ExtentReports();
         extent.attachReporter (sparkReporter);
         sparkReporter.config().setTheme (Theme. DARK);
         extent.setSystemInfo("HostName", "RHEL8");
         extent.setSystemInfo("UserName", "root");
         sparkReporter.config().setDocumentTitle("Automation Report");
-        sparkReporter.config().setReportName("Automation Tests Results by SDET ADDA");
+        sparkReporter.config().setReportName("Automation Tests Results by Nicholas Allee");
     }
+
     @BeforeMethod
     @Parameters("browser")
     public void beforeMethod(String browser, Method testMethod){
@@ -52,7 +52,14 @@ public class TestBase {
             driver = new FirefoxDriver();
         }
     }
+
     @AfterMethod
+    public void afterMethod(){
+
+    }
     @AfterTest
+    public void afterTest(){
+
+    }
 }
 
