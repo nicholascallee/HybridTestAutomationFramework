@@ -7,8 +7,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.IAnnotationTransformer;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.IConfigurationAnnotation;
+import org.testng.annotations.ITestAnnotation;
+
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 public class SuiteListener implements ITestListener, IAnnotationTransformer {
 
@@ -20,5 +25,9 @@ public class SuiteListener implements ITestListener, IAnnotationTransformer {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+        annotation.setRetryAnalyzer(RetryAnalyzer.class);
     }
 }
