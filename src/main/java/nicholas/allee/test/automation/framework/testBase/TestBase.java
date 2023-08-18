@@ -13,6 +13,7 @@ import nicholas.allee.test.automation.framework.utilities.CustomParams;
 import nicholas.allee.test.automation.framework.utilities.PageEventHolder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -68,7 +69,7 @@ public class TestBase {
         }
         else if(browser.equalsIgnoreCase("edge")){
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            driver = new EdgeDriver();
         }
     }
 

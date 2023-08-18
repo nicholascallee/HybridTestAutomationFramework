@@ -5,7 +5,7 @@
         <listener class-name="nicholas.allee.test.automation.framework.utilities.SuiteListener"></listener>
     </listeners>
     <test thread-count="3" name="Test">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="edge"></parameter>
             <classes>
                 <class name="QATestOrangeHRM"/>
             </classes>
