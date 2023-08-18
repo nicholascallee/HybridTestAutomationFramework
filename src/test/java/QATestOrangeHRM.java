@@ -2,7 +2,6 @@ import nicholas.allee.test.automation.framework.testBase.TestBase;
 import org.testng.annotations.Test;
 
 public class QATestOrangeHRM extends TestBase {
-
     @Test
     public void testLoginCredentials() throws InterruptedException {
         logger.info("Verifying that the loading page is loaded.");
@@ -11,7 +10,8 @@ public class QATestOrangeHRM extends TestBase {
         pageEventHolder.loginPageEvents.enterUsernamePassword(customParams.username,customParams.password);
         logger.info("Clicking Sign in Button.");
         pageEventHolder.loginPageEvents.clickSignInButton();
+        logger.info("Verifying that Paul Collings is logged in.");
+        pageEventHolder.homePageEvents.verifyIfUserWasLoggedIn("Paul Collings");
         Thread.sleep(1000L);
     }
-
 }
