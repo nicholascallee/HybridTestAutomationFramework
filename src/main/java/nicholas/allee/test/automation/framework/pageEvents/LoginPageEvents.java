@@ -15,7 +15,7 @@ public class LoginPageEvents {
         element.getWebElement("XPATH", LoginPageElements.passwordField).sendKeys("");
     }
 
-    public void clickSignInButton(){
+    public void clickSignInButton() throws InterruptedException {
         element.getWebElement("XPATH", LoginPageElements.loginButtonField).click();
     }
 
