@@ -9,12 +9,15 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import nicholas.allee.test.automation.framework.utilities.Constants;
+import nicholas.allee.test.automation.framework.utilities.CustomParams;
+import nicholas.allee.test.automation.framework.utilities.PageEventHolder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
@@ -23,6 +26,14 @@ public class TestBase {
     public ExtentSparkReporter sparkReporter;
     public ExtentReports extent;
     public ExtentTest logger;
+    public CustomParams customParams;
+    public PageEventHolder pageEventHolder;
+
+    @BeforeClass
+    public void beforeClass() throws IOException {
+        customParams = new CustomParams("testParameters.properties");
+        pageEventHolder = new PageEventHolder();
+    }
 
     @BeforeTest
     public void beforeTest()
