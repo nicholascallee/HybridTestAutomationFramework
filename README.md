@@ -4,6 +4,7 @@ Java based automation framework for ui, api, and database focused testing using 
 
 ## Notable Features
 - Configurable browser and environment types
+  - headless browser execution
 - Dynamic property file switching based on environment
 - Selenium based item selection methods
 - Event holder handles initialization of required page event classes
