@@ -20,8 +20,11 @@ Verify the user can login to [OrangeHRM](https://opensource-demo.orangehrmlive.c
   - Step 6A: check that the top right of the page contains the correct username for the credentials entered. (in our case, Paul Collings is correct)
 
 ### Example Manual UI Test Screenshots
--logging in
-![image](https://github.com/nicholascallee/HybridTestAutomationFramework/assets/141438641/f3b65b0b-1de8-4a49-991d-a66d84620fa7)
+- logging in
+  - ![image](https://github.com/nicholascallee/HybridTestAutomationFramework/assets/141438641/f3b65b0b-1de8-4a49-991d-a66d84620fa7)
+- logged in with Paul Collings
+  - ![image](https://github.com/nicholascallee/HybridTestAutomationFramework/assets/141438641/34e20575-6f57-437f-a306-257aaf282c04)
+
 
 
 
