@@ -1,5 +1,4 @@
 import nicholas.allee.test.automation.framework.testBase.TestBase;
-import nicholas.allee.test.automation.framework.utilities.CustomParams;
 import org.testng.annotations.Test;
 
 public class QATestOrangeHRM extends TestBase {
