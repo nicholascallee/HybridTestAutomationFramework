@@ -13,8 +13,11 @@ import nicholas.allee.test.automation.framework.utilities.CustomParams;
 import nicholas.allee.test.automation.framework.utilities.PageEventHolder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import java.io.File;
@@ -61,15 +64,23 @@ public class TestBase {
     public void setupDriver (String browser) {
         if(browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            ChromeOptions customChromeOptions = new ChromeOptions();
+            customChromeOptions.addArguments("headless="+ Constants.runHeadlessMode.toString());
+            driver = new ChromeDriver(customChromeOptions);
         }
         else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            FirefoxOptions customFirefoxOptions = new FirefoxOptions();
+            if(Constants.runHeadlessMode) {
+                customFirefoxOptions.addArguments("-headless");
+            }
+            driver = new FirefoxDriver(customFirefoxOptions);
         }
         else if(browser.equalsIgnoreCase("edge")){
             WebDriverManager.firefoxdriver().setup();
-            driver = new EdgeDriver();
+            EdgeOptions customEdgeOptions = new EdgeOptions();
+            customEdgeOptions.addArguments("headless="+ Constants.runHeadlessMode.toString());
+            driver = new EdgeDriver(customEdgeOptions);
         }
     }
 

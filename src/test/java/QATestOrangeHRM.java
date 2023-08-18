@@ -12,6 +12,5 @@ public class QATestOrangeHRM extends TestBase {
         pageEventHolder.loginPageEvents.clickSignInButton();
         logger.info("Verifying that Paul Collings is logged in.");
         pageEventHolder.homePageEvents.verifyIfUserWasLoggedIn("Paul Collings");
-        Thread.sleep(1000L);
     }
 }
