@@ -32,7 +32,7 @@ public class TestBase {
 
     @BeforeClass
     public void beforeClass() throws IOException {
-        customParams = new CustomParams("testParameters.properties");
+        customParams = new CustomParams();
         pageEventHolder = new PageEventHolder();
     }
 
