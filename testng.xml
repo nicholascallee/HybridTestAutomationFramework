@@ -4,10 +4,22 @@
     <listeners>
         <listener class-name="nicholas.allee.test.automation.framework.utilities.SuiteListener"></listener>
     </listeners>
-    <test thread-count="3" name="Test">
+    <test thread-count="3" name="EdgeTest">
         <parameter name="browser" value="edge"></parameter>
             <classes>
                 <class name="QATestOrangeHRM"/>
             </classes>
+    </test>
+    <test thread-count="3" name="ChromeTest">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="QATestOrangeHRM"/>
+        </classes>
+    </test>
+    <test thread-count="3" name="FirefoxTest">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="QATestOrangeHRM"/>
+        </classes>
     </test>
 </suite>
