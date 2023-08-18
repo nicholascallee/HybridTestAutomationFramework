@@ -10,9 +10,9 @@ public class LoginPageEvents {
     public void verifyIfLoginPageIsLoaded(){
         Assert.assertFalse(element.getWebElements("XPATH", LoginPageElements.usernameField).isEmpty(), "unable to locate username element inside login page.");
     }
-    public void enterUsernamePassword(){
-        element.getWebElement("XPATH", LoginPageElements.usernameField).sendKeys("");
-        element.getWebElement("XPATH", LoginPageElements.passwordField).sendKeys("");
+    public void enterUsernamePassword(String username, String password){
+        element.getWebElement("XPATH", LoginPageElements.usernameField).sendKeys(username);
+        element.getWebElement("XPATH", LoginPageElements.passwordField).sendKeys(password);
     }
 
     public void clickSignInButton() throws InterruptedException {
