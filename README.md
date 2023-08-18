@@ -1,4 +1,5 @@
-# HybridTestAutomationFramework
+# Hybrid Test Automation Framework
+## Implemented by Nicholas Christopher Allee
 Java based automation framework for ui, api, and database focused testing using the PAGE OBJECT MODEL methodology. 
 
 ## Notable Features
