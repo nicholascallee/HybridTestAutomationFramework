@@ -11,6 +11,6 @@ public class CustomParams {
         InputStream input = CustomParams.class.getClassLoader().getResourceAsStream(filename);
         props.load(input);
         username = props.getProperty("orange.username");
-        password = props.getProperty("orange.password");
+        password = System.getProperty("password");
     }
 }
