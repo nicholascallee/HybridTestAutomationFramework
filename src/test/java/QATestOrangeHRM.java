@@ -9,7 +9,7 @@ public class QATestOrangeHRM extends TestBase {
         pageEventHolder.loginPageEvents.verifyIfLoginPageIsLoaded();
         logger.info("Entering username and password.");
         pageEventHolder.loginPageEvents.enterUsernamePassword(customParams.username,customParams.password);
-        logger.info("Clicking Signing Button.");
+        logger.info("Clicking Sign in Button.");
         pageEventHolder.loginPageEvents.clickSignInButton();
         Thread.sleep(1000L);
     }
