@@ -12,7 +12,7 @@ Java based automation framework for ui, api, and database focused testing using 
 - Configurable automatic retry of failed tests
 
 ## Example Test Case for user login
-Verify the user can login to [OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+Verify the user can log in to [OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 - Step 1: open the web browser
 - Step 2: navigate to [OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 - Step 3: enter the username "Admin" into the username field
